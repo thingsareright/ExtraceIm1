@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    //noinspection GradleCompatible
+    compileSdkVersion 24
+    buildToolsVersion '28.0.3'
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "extrace.ui.main"
+        minSdkVersion 19
+        targetSdkVersion 27
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+
+
+
+    android {
+        packagingOptions {
+            pickFirst 'stylesheet.css'
+            pickFirst 'constant-values.html'
+            pickFirst 'allclasses-frame.html'
+            pickFirst 'package-list'
+            pickFirst 'com/google/zxing/*.html'
+            pickFirst 'index-all.html'
+            pickFirst 'com/google/zxing/package-tree.html'
+            pickFirst 'resources/*.gif'
+            pickFirst 'serialized-form.html'
+            pickFirst 'help-doc.html'
+            exclude 'deprecated-list.html'
+            pickFirst 'allclasses-noframe.html'
+            pickFirst 'index.html'
+            pickFirst 'overview-summary.html'
+            pickFirst 'overview-frame.html'
+            pickFirst 'overview-tree.html'
+        }
+    }
+
+
+}
+
+
+
+dependencies {
+    implementation files('src/main/libs/Gson/gson-2.2.4-javadoc.jar')
+    implementation files('src/main/libs/Gson/gson-2.2.4-sources.jar')
+    implementation files('src/main/libs/Gson/gson-2.2.4.jar')
+    implementation files('src/main/libs/ZXing/core-3.0.0-javadoc.jar')
+    implementation files('src/main/libs/ZXing/core-3.0.0.jar')
+    implementation files('src/main/libs/ZXing/javase-3.0.0-javadoc.jar')
+    implementation files('src/main/libs/ZXing/javase-3.0.0.jar')
+    implementation 'com.android.support:appcompat-v7:24.2.1'
+}
+

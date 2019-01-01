@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/Gson/gson-2.2.4-javadoc.jar')
+    implementation files('libs/Gson/gson-2.2.4-sources.jar')
+    implementation files('libs/Gson/gson-2.2.4.jar')
+    implementation files('libs/Support/android-support-v4.jar')
+    implementation files('libs/Support/android-support-v7-appcompat.jar')
+    implementation files('libs/ZXing/core-3.0.0-javadoc.jar')
+    implementation files('libs/ZXing/core-3.0.0.jar')
+    implementation files('libs/ZXing/core-3.0.0.jar')
+    implementation files('libs/ZXing/core-3.0.0.jar')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
